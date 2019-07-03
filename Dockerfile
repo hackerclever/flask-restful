@@ -4,6 +4,9 @@ COPY . /app/
 
 WORKDIR /app/
 
+RUN pip install --upgrade pip
+RUN pip install flask flask_restplus
+
 EXPOSE 8080
 
-CMD [ "echo", "'hello docker'"]
+CMD [ "python", "src/app.py"]
