@@ -1,0 +1,17 @@
+version: '2'
+services:
+  flask-restful:
+    image: flask-restful
+    tty: true
+    ports:
+      - "8000:8080"
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - ./.env.example
+    command: >
+      /bin/sh -c "pwd"
+networks:
+  default:
+    external:
+      name: microservice
