@@ -4,13 +4,13 @@ services:
     image: flask-restful
     tty: true
     ports:
-      - "8000:8080"
+      - "8010:8010"
     volumes:
       - .:/app
     env_file:
       - ./.env.example
     command: >
-      /bin/sh -c "python src/server.py"
+      /bin/sh -c "waitress-serve --port=8010 'src.app:app'"
 networks:
   default:
     external:

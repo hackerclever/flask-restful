@@ -32,4 +32,4 @@ app.register_blueprint(blueprint)
 from werkzeug.contrib.fixers import ProxyFix
 app.wsgi_app = ProxyFix(app.wsgi_app) # for http or https
 
-app.run(host="0.0.0.0", port="8080")
+# app.run(host="0.0.0.0", port="8080")
